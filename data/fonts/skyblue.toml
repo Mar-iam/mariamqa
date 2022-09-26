@@ -1,0 +1,15 @@
+# Font style metadata
+name = "sjyblue"
+
+# Optional Google font URL
+google_fonts = "family=Lato:wght@700&family=Roboto"
+
+# Font families
+heading_font = "Lato"
+body_font = "Roboto"
+nav_font = "Roboto"
+mono_font = "Roboto Mono"
+
+# Font size
+font_size = "18"
+font_size_small = "16"

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects | Mariam Bahameish</title>
+    <link>https://mariam.qa/project/</link>
+      <atom:link href="https://mariam.qa/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Projects</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 05 Apr 2019 02:45:33 +0000</lastBuildDate>
+    <image>
+      <url>https://mariam.qa/media/icon_hud188c19bf2499939bc3b031522c57ed1_9149_512x512_fill_lanczos_center_3.png</url>
+      <title>Projects</title>
+      <link>https://mariam.qa/project/</link>
+    </image>
+    
+    <item>
+      <title>Data Visualisation in Large Displays</title>
+      <link>https://mariam.qa/project/data-visualisation/</link>
+      <pubDate>Fri, 05 Apr 2019 02:45:33 +0000</pubDate>
+      <guid>https://mariam.qa/project/data-visualisation/</guid>
+      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;This work was part of my master&amp;rsquo;s project at Imperial College London under the supervision of Dr. &lt;a href=&#34;https://scholar.google.co.uk/citations?hl=en&amp;amp;user=0w0rO70AAAAJ&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;David Birch&lt;/a&gt;. The primary aim was to integrate a scientific visualisation tool, ParaView, with the Data Observatory (DO) at the &lt;a href=&#34;https://www.imperial.ac.uk/data-science/data-observatory/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Data Science Institute&lt;/a&gt; to foster data exploration. The DO is a large tiled-display system consisting of 64 screens providing a resolution of over 130 megapixels.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-a-snapshot-of-the-inner-view-of-3d-brain-model-displayed-in-the-do&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;A snapshot of the inner view of 3D brain model displayed in the DO&#34; srcset=&#34;
+               /project/data-visualisation/featured_hu1fd07e45342d4e087ceab696998fedec_4603330_5d05021c439536684731a2441b25c7ae.webp 400w,
+               /project/data-visualisation/featured_hu1fd07e45342d4e087ceab696998fedec_4603330_8bd68630a03bb303afc9f2362687c48f.webp 760w,
+               /project/data-visualisation/featured_hu1fd07e45342d4e087ceab696998fedec_4603330_1200x1200_fit_q75_h2_lanczos.webp 1200w&#34;
+               src=&#34;https://mariam.qa/project/data-visualisation/featured_hu1fd07e45342d4e087ceab696998fedec_4603330_5d05021c439536684731a2441b25c7ae.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;296&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      A snapshot of the inner view of 3D brain model displayed in the DO
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;h2 id=&#34;implementation&#34;&gt;Implementation&lt;/h2&gt;
+&lt;p&gt;The main approach was to split the 3D model, displayed in ParaView, across 64 screens over a distributed clustered network. This was achieved by controlling the viewing camera for each screen and ensuring the alignment of the overall scene. Moreover, the &lt;a href=&#34;https://en.wikipedia.org/wiki/Message_Passing_Interface&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MPI protocol&lt;/a&gt; was used to distribute the data rendering and processing over multiple machines.&lt;/p&gt;
+&lt;h2 id=&#34;evaluation&#34;&gt;Evaluation&lt;/h2&gt;
+&lt;p&gt;The integration of ParaView with the DO provided a high-resolution visualisation of scientific models and enabled researchers to collaborate with each other. Therefore, the effectiveness of large display environment as compared with small screens was assessed in terms of evaluating the task performance and collaboration.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Task Performance:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A mental rotation task was designed to evaluate the perceptual and cognitive performance of researchers in both environments. It is one of the popular tests that is mainly used to identify the ability to detect orientation change in 3D objects from two perspectives &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. Each participant was asked if the displayed models were the same or mirrored.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-mental-rotation-task-in-two-cases-1-the-same-2-mirrored&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Mental rotation task in two cases: (1) The same (2) Mirrored&#34; srcset=&#34;
+               /project/data-visualisation/mental_hu3e9cb88e8c1c4f777c0ff4bbb99cc41d_64002_1fd38ddaef6ff9dd36bce6a98fe8cec7.webp 400w,
+               /project/data-visualisation/mental_hu3e9cb88e8c1c4f777c0ff4bbb99cc41d_64002_a4f85a15abf70e58055c91f7e0c9697c.webp 760w,
+               /project/data-visualisation/mental_hu3e9cb88e8c1c4f777c0ff4bbb99cc41d_64002_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://mariam.qa/project/data-visualisation/mental_hu3e9cb88e8c1c4f777c0ff4bbb99cc41d_64002_1fd38ddaef6ff9dd36bce6a98fe8cec7.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;258&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Mental rotation task in two cases: (1) The same (2) Mirrored
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Collaboration:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In the collaboration task, the participants were asked to work in pairs and search for hidden objects -represented as coloured arrows- injected inside a 3D brain model while discussing within a limited time.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;For both tests, the number of correct responses was measured to conduct quantitative analysis. The results showed a significant advantage of using the DO as compared with the typical desktop monitor in the accuracy of the mental rotation and collaborative search tasks.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;R. N. Shepard and J. Metzler, “Mental Rotation of Three-Dimensional Objects,” Science, New Series, 1971.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Haptic Seat in 3D Driving Simulation</title>
+      <link>https://mariam.qa/project/haptic-seat/</link>
+      <pubDate>Fri, 05 Apr 2019 02:44:40 +0000</pubDate>
+      <guid>https://mariam.qa/project/haptic-seat/</guid>
+      <description>&lt;p&gt;,,&lt;/p&gt;
+&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;In the undergraduate senior project and under the supervision of Dr. &lt;a href=&#34;https://scholar.google.com/citations?user=jYUTRTcAAAAJ&amp;amp;hl=en&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Osama Halabi&lt;/a&gt;, we developed a 3D driving simulation in an immersive environment, that is projected on CAVE and HMD display systems, using &lt;a href=&#34;https://www.worldviz.com/vizard&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Vizard VR Toolkit&lt;/a&gt;. The simulation was integrated with a set of vibrators mounted in the back seat to deliver navigational information to the driver.&lt;/p&gt;
+&lt;h2 id=&#34;high-level-architecture&#34;&gt;High-level architecture&lt;/h2&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:70%&#34; src=&#34;hla.png&#34; /&gt;
+&lt;p&gt;A set of 10 vibrators were distributed in the back seat based on several experiments to determine the appropriate intensity of vibration, the pattern, and the minimum distinguishable distance. They have been arranged as 4, 2, 4 vibrators in each column. The first two rows corresponded to the &lt;em&gt;&amp;ldquo;straight&amp;rdquo;&lt;/em&gt; signal, whereas the first and last columns indicated the &lt;em&gt;&amp;ldquo;left&amp;rdquo;&lt;/em&gt; and &lt;em&gt;&amp;ldquo;right&amp;rdquo;&lt;/em&gt; signals respectively.&lt;/p&gt;
+&lt;h2 id=&#34;evaluation&#34;&gt;Evaluation&lt;/h2&gt;
+&lt;p&gt;A predefined scenario was designed in the 3D driving environment to navigate the drivers to a certain destination. The overall effectiveness of the vibrotactile seat was measured based on the response time and the number of correct responses as compared with audio-directional feedback. The response time was measured between the time the navigational aid was triggered and the time in which the user responded and took action.&lt;/p&gt;
+&lt;p&gt;Further details about the design of the tactile seat and the study analyses are discussed in the following papers:&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Offshore VR Environment</title>
+      <link>https://mariam.qa/project/offshore-simulation/</link>
+      <pubDate>Fri, 05 Apr 2019 02:44:40 +0100</pubDate>
+      <guid>https://mariam.qa/project/offshore-simulation/</guid>
+      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;The motivation behind this project was to facilitate the learning process of petroleum engineering students by simulating the offshore environment using virtual reality technology.&lt;/p&gt;
+&lt;p&gt;Therefore, an interactive oil rig platform has been developed using &lt;a href=&#34;https://www.worldviz.com/vizard&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Vizard VR Toolkit&lt;/a&gt; and 3ds Max to create the animation. The users can navigate through the simulation, explore the different components, and understand their functionalities. The aim was to display the 3D environment in a CAVE system to prepare the students for the industrial experience.&lt;/p&gt;
+&lt;p&gt;Screenshots of the VR simulation are shown below:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img class=&#34;special-img-class&#34; style=&#34;width:90%&#34; src=&#34;offshore_top.png&#34; /&gt;&lt;/th&gt;
+&lt;th&gt;&lt;img class=&#34;special-img-class&#34; style=&#34;width:90%&#34; src=&#34;offshore.png&#34; /&gt;&lt;/th&gt;
+&lt;th&gt;&lt;img class=&#34;special-img-class&#34; style=&#34;width:90%&#34; src=&#34;offshore_bottom.png&#34; /&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

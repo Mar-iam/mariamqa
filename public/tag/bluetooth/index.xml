@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bluetooth | Mariam Bahameish</title>
+    <link>https://mariam.qa/tag/bluetooth/</link>
+      <atom:link href="https://mariam.qa/tag/bluetooth/index.xml" rel="self" type="application/rss+xml" />
+    <description>Bluetooth</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 01 May 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://mariam.qa/media/icon_hud188c19bf2499939bc3b031522c57ed1_9149_512x512_fill_lanczos_center_3.png</url>
+      <title>Bluetooth</title>
+      <link>https://mariam.qa/tag/bluetooth/</link>
+    </image>
+    
+    <item>
+      <title>Extracting Heart Rate Measurements from Bluetooth LE Packets</title>
+      <link>https://mariam.qa/post/hr-ble/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://mariam.qa/post/hr-ble/</guid>
+      <description>&lt;h1 id=&#34;bluetooth-le-framework&#34;&gt;Bluetooth LE Framework&lt;/h1&gt;
+&lt;p&gt;Devices that communicate over Bluetooth Low Energy technology define the data structure based on the General Attributes (&lt;a href=&#34;https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GATT&lt;/a&gt;). The GATT framework consists of various &lt;strong&gt;profiles&lt;/strong&gt; where each profile composed of one or more &lt;strong&gt;services&lt;/strong&gt;. Each service has a set of &lt;strong&gt;characteristics&lt;/strong&gt; that indicate the properties and operations of the service.&lt;/p&gt;
+&lt;p&gt;For instance, the Heart Rate Profile enables the communication between the Heart Rate Collector and Sensor, where the latter measures the heart rate through the characteristics of the Heart Rate service. The following diagram illustrates the Heart Rate Profile components:&lt;/p&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:70%&#34; src=&#34;hrprofile.png&#34; /&gt;
+&lt;p&gt;All services and characteristics within the GATT framework are identified with a universally unique ID.&lt;/p&gt;
+&lt;h1 id=&#34;heart-rate-service&#34;&gt;Heart Rate Service&lt;/h1&gt;
+&lt;p&gt;Within the HR service, there are four main characteristics:&lt;/p&gt;
+&lt;center&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;span style=&#34;display: inline-block; width:300px&#34;&gt;Characteristic&lt;/span&gt;&lt;/th&gt;
+&lt;th&gt;Property&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Heart Rate Measurement (HRM)&lt;/td&gt;
+&lt;td&gt;Notify&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Body Sensor Location&lt;/td&gt;
+&lt;td&gt;Read&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Heart Rate Control Point&lt;/td&gt;
+&lt;td&gt;Write&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+&lt;h2 id=&#34;hrm-characteristic&#34;&gt;HRM Characteristic&lt;/h2&gt;
+&lt;p&gt;The HR collector receives a notification from the HRM characteristic whenever the data is available. The measurements are sent on a 23-bytes of data per Bluetooth LE packet, where the first byte is called &lt;strong&gt;Flag&lt;/strong&gt;, and it provides information about the data format.&lt;/p&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:80%&#34; src=&#34;flag.png&#34; /&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;HR Data Format&lt;/strong&gt;: 1-bit that indicates if HR values are in the format of UINT8 or UINT16.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sensor Contact (SC)&lt;/strong&gt;: 2-bits indicating whether the SC feature is supported or not, and if supported whether the device in good or poor contact with the skin.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Energy Expended (EE)&lt;/strong&gt;: 1-bit that indicates the presence of the Energy Expended in the HRM characteristic.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RR-Intervals (RR)&lt;/strong&gt;: 1-bit that tells whether RR-intervals measurements are present in the HRM characteristic.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RFFU&lt;/strong&gt;: 3-bits Reserved for Future Use&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;hr-values&#34;&gt;HR values&lt;/h2&gt;
+&lt;p&gt;Based on the format of the HR data whether it is UINT8 or UINT16, the values can be read as 1 or 2 bytes, resepectively. It can be retrieved from the received data packet starting from the byte followed by the flag. The HR values are measured in beats per minute (bpm).&lt;/p&gt;
+&lt;h2 id=&#34;rr-intervals&#34;&gt;RR-Intervals&lt;/h2&gt;
+&lt;p&gt;Retrieving RR-intervals from Bluetooth LE packets is not straightforward. Since multiple RR-intervals could be measured between the transmissions of HRM characteristic, the RR-intervals are presented in the sub-fields of the characteristic. The number of sub-fields is determined based on the overall length of the packet, the format of HR values, and the presence of EE. Therefore,&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;If the format of HR values is &lt;strong&gt;UINT8&lt;/strong&gt;, the maximum number of RR-interval values that can be notified with a single HR measurement is:
+&lt;ul&gt;
+&lt;li&gt;If EE is present, the maximum number of RR-intervals is 8&lt;/li&gt;
+&lt;li&gt;Otherwise, the maximum number of RR-intervals is 9
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;If the format of HR values is &lt;strong&gt;UINT16&lt;/strong&gt;,
+&lt;ul&gt;
+&lt;li&gt;If EE is present, the maximum number of RR-intervals is 7&lt;/li&gt;
+&lt;li&gt;Otherwise, the maximum number of RR-intervals is 8&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;Note: the resolution of RR-Intervals is 1/1024 seconds&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;rr-extraction-algorithm&#34;&gt;RR Extraction Algorithm&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Check the flag byte for the following:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;HR Format&lt;/li&gt;
+&lt;li&gt;Presence of EE&lt;/li&gt;
+&lt;li&gt;Availability of RR-Intervals
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;If RR-Intervals are available, then retrieve the data:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Combine every two bytes that represent one measurement until the end of the data packet. (RR-Intervals format is UINT16)&lt;/li&gt;
+&lt;li&gt;Convert the measurements to seconds by dividing the RR-Intervals by 1024.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Education | Mariam Bahameish</title>
+    <link>https://mariam.qa/tag/education/</link>
+      <atom:link href="https://mariam.qa/tag/education/index.xml" rel="self" type="application/rss+xml" />
+    <description>Education</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 05 Apr 2019 02:44:40 +0100</lastBuildDate>
+    <image>
+      <url>https://mariam.qa/media/icon_hud188c19bf2499939bc3b031522c57ed1_9149_512x512_fill_lanczos_center_3.png</url>
+      <title>Education</title>
+      <link>https://mariam.qa/tag/education/</link>
+    </image>
+    
+    <item>
+      <title>Offshore VR Environment</title>
+      <link>https://mariam.qa/project/offshore-simulation/</link>
+      <pubDate>Fri, 05 Apr 2019 02:44:40 +0100</pubDate>
+      <guid>https://mariam.qa/project/offshore-simulation/</guid>
+      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;The motivation behind this project was to facilitate the learning process of petroleum engineering students by simulating the offshore environment using virtual reality technology.&lt;/p&gt;
+&lt;p&gt;Therefore, an interactive oil rig platform has been developed using &lt;a href=&#34;https://www.worldviz.com/vizard&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Vizard VR Toolkit&lt;/a&gt; and 3ds Max to create the animation. The users can navigate through the simulation, explore the different components, and understand their functionalities. The aim was to display the 3D environment in a CAVE system to prepare the students for the industrial experience.&lt;/p&gt;
+&lt;p&gt;Screenshots of the VR simulation are shown below:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;img class=&#34;special-img-class&#34; style=&#34;width:90%&#34; src=&#34;offshore_top.png&#34; /&gt;&lt;/th&gt;
+&lt;th&gt;&lt;img class=&#34;special-img-class&#34; style=&#34;width:90%&#34; src=&#34;offshore.png&#34; /&gt;&lt;/th&gt;
+&lt;th&gt;&lt;img class=&#34;special-img-class&#34; style=&#34;width:90%&#34; src=&#34;offshore_bottom.png&#34; /&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

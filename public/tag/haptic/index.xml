@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Haptic | Mariam Bahameish</title>
+    <link>https://mariam.qa/tag/haptic/</link>
+      <atom:link href="https://mariam.qa/tag/haptic/index.xml" rel="self" type="application/rss+xml" />
+    <description>Haptic</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 05 Apr 2019 02:44:40 +0000</lastBuildDate>
+    <image>
+      <url>https://mariam.qa/media/icon_hud188c19bf2499939bc3b031522c57ed1_9149_512x512_fill_lanczos_center_3.png</url>
+      <title>Haptic</title>
+      <link>https://mariam.qa/tag/haptic/</link>
+    </image>
+    
+    <item>
+      <title>Haptic Seat in 3D Driving Simulation</title>
+      <link>https://mariam.qa/project/haptic-seat/</link>
+      <pubDate>Fri, 05 Apr 2019 02:44:40 +0000</pubDate>
+      <guid>https://mariam.qa/project/haptic-seat/</guid>
+      <description>&lt;p&gt;,,&lt;/p&gt;
+&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;In the undergraduate senior project and under the supervision of Dr. &lt;a href=&#34;https://scholar.google.com/citations?user=jYUTRTcAAAAJ&amp;amp;hl=en&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Osama Halabi&lt;/a&gt;, we developed a 3D driving simulation in an immersive environment, that is projected on CAVE and HMD display systems, using &lt;a href=&#34;https://www.worldviz.com/vizard&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Vizard VR Toolkit&lt;/a&gt;. The simulation was integrated with a set of vibrators mounted in the back seat to deliver navigational information to the driver.&lt;/p&gt;
+&lt;h2 id=&#34;high-level-architecture&#34;&gt;High-level architecture&lt;/h2&gt;
+&lt;img class=&#34;special-img-class&#34; style=&#34;width:70%&#34; src=&#34;hla.png&#34; /&gt;
+&lt;p&gt;A set of 10 vibrators were distributed in the back seat based on several experiments to determine the appropriate intensity of vibration, the pattern, and the minimum distinguishable distance. They have been arranged as 4, 2, 4 vibrators in each column. The first two rows corresponded to the &lt;em&gt;&amp;ldquo;straight&amp;rdquo;&lt;/em&gt; signal, whereas the first and last columns indicated the &lt;em&gt;&amp;ldquo;left&amp;rdquo;&lt;/em&gt; and &lt;em&gt;&amp;ldquo;right&amp;rdquo;&lt;/em&gt; signals respectively.&lt;/p&gt;
+&lt;h2 id=&#34;evaluation&#34;&gt;Evaluation&lt;/h2&gt;
+&lt;p&gt;A predefined scenario was designed in the 3D driving environment to navigate the drivers to a certain destination. The overall effectiveness of the vibrotactile seat was measured based on the response time and the number of correct responses as compared with audio-directional feedback. The response time was measured between the time the navigational aid was triggered and the time in which the user responded and took action.&lt;/p&gt;
+&lt;p&gt;Further details about the design of the tactile seat and the study analyses are discussed in the following papers:&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

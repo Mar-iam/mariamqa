@@ -7221,6 +7221,7 @@ html {
     font-size: 18px; } }
 
 body {
+  font-weight: 300;
   font-family: inherit;
   font-size: 1rem;
   line-height: inherit;
@@ -7305,7 +7306,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
@@ -7325,12 +7326,13 @@ h1 {
   font-size: 2.25rem; }
 
 h2 {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
   font-size: 1.5rem; }
 
 h3 {
-  font-weight: 700;
   margin-top: 1.5rem;
+  font-weight: 700;
   font-size: 1.25rem; }
 
 h4,
@@ -8442,7 +8444,8 @@ details p {
  *  Documentation layout
  **************************************************/
 .docs-article-container {
-  max-width: 760px; }
+  max-width: 760px;
+  margin: 0 auto; }
 
 /* Documentation: article footer. */
 .docs .body-footer {
@@ -8455,7 +8458,8 @@ details p {
 /* Docs content. */
 .docs-content {
   order: 1;
-  position: relative; }
+  position: relative;
+  font-size: 80%; }
 
 .docs-content > h2[id],
 .docs-content > h3[id],
@@ -8976,12 +8980,12 @@ html[dir='rtl'] body {
 .home-section {
   background: white;
   position: relative;
-  padding: 110px 0;
+  padding: 110px 0 80px 0;
   z-index: 0; }
 
 .home-section.fullscreen,
 .fullscreen {
-  min-height: calc(100vh - 70px); }
+  min-height: calc(100vh - 220px); }
 
 @media (max-width: 991.98px) {
   .home-section.fullscreen,
@@ -9084,12 +9088,15 @@ html[dir='rtl'] body {
     padding-top: 40px; } }
 
 .section-heading h1 {
-  margin: 0 0 10px; }
+  margin: 0 0 10px 0;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 150px; }
 
 .section-subheading {
   font-size: 1.25rem;
-  font-family: "Lato", sans-serif;
-  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
   margin-top: 1rem;
   margin-bottom: 0.5rem; }
 
@@ -9160,6 +9167,18 @@ html[dir='rtl'] body {
 /*************************************************
  *  About widget
  **************************************************/
+@media screen and (min-width: 768px) {
+  .wg-about {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -70px; } }
+
+@media screen and (min-width: 1200px) {
+  .wg-about .container {
+    margin-bottom: 200px; } }
+
 #profile {
   text-align: center;
   padding: 30px 10px;
@@ -9493,7 +9512,7 @@ a.hero-cta-alt:hover {
   margin-bottom: 1.5rem; }
 
 .project-card.project-item {
-  margin: 0 0 20px;
+  margin: 0 0 20px 0;
   /* Set to Isotope's gutter size */ }
 
 .project-card .card {

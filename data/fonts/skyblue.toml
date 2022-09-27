@@ -2,7 +2,7 @@
 name = "sjyblue"
 
 # Optional Google font URL
-google_fonts = "family=Lato:wght@400&family=Roboto:wght@400"
+google_fonts = "family=Roboto:wght@400"
 
 # Font families
 heading_font = "Roboto"

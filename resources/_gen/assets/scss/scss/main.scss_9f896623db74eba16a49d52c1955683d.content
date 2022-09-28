@@ -9167,6 +9167,14 @@ html[dir='rtl'] body {
 /*************************************************
  *  About widget
  **************************************************/
+.wg-about .background-img {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  max-width: 100%; }
+  @media screen and (min-width: 768px) {
+    .wg-about .background-img {
+      bottom: 70px; } }
 @media screen and (min-width: 768px) {
   .wg-about {
     height: 100vh;

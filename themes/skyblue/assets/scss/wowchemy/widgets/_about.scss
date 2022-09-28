@@ -1,6 +1,16 @@
 /*************************************************
  *  About widget
  **************************************************/
+ .wg-about .background-img {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  max-width: 100%;
+
+  @media screen and (min-width: 768px) {
+    bottom: 70px;
+  }
+}
 .wg-about {
   @media screen and (min-width: 768px) {
     height: 100vh;
@@ -28,6 +38,7 @@
   margin: 0 auto;
   object-fit: cover;
 }
+
 
 // Use smaller avatar size in About widget on small devices.
 @include media-breakpoint-down(sm) {

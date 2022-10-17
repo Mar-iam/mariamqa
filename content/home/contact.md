@@ -25,7 +25,7 @@ content:
       captcha: false
 
   # Contact details (edit or remove options as required)
-  email: info@mariam.qa
+  # email: info@mariam.qa
 design:
   columns: '2'
 ---
